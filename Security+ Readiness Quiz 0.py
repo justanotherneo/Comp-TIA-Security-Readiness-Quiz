@@ -48,7 +48,7 @@ print(r'''\
       by: Vergil 
       YT, FB, IG, TT, SC: crzycybr
       vergil@crzycybersecurity.com
-
+      cashapp: $crzymike07
       ''')
 
 #welcome user and give instructions
