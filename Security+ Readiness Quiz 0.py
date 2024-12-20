@@ -1,6 +1,3 @@
-import random
-import time
-
 #program logic 
     #greet user and give info about the quiz as well as instructions for input
     #user is presented with multiple choice sec+ quiz questions 
@@ -125,7 +122,7 @@ def main():
         counter += 1    
 
         
-    score = round(100/correct)  
+    score = round(correct/10) * 100 
 
     if score <= 70: 
         print(f'You got {correct} out 10. You scored a {score}%. You need to hit those books and learn the basics, \nyou are no where near ready')
