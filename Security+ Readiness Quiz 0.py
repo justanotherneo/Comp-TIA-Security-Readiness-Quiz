@@ -81,7 +81,7 @@ questions = [{'Q' : 'What service typically operates on port 161?', 'c' : ['A. S
  {'Q' : '10.145.50.255 and 172.100.10.45 are examples of what type of IP Address?', 'c' : [ 'A. Private Ip Addresses', 'B. Public Ip Addresses', 'C. IPv6 Addresses'],
   'ca' : 'a'}, {'Q' : 'Specificall targeting the CEO or other top level employee via phishing is called?', 'c' : ['A. Spear Phishing', 'B. Whaling',
 'C. Vishing'], 'ca' : 'b'}, {'Q' : 'Port 69 typicall runs what service?', 'c' : ['A. Giggity Network Protocol', 'B. Trivial File Transfer Protocol', "C. Free Telephone Protocol"], 'ca' : 'b'},
-{'Q' : 'Adversaries sending targeting voice calls in a social engineering attack is known as?', 'c' : ['A. Vishing', 'Smishing', 'Spam Attack'], 'ca' : 'a'}, 
+{'Q' : 'Adversaries sending targeting voice calls in a social engineering attack is known as?', 'c' : ['A. Vishing', 'B. Smishing', 'C.Spam Attack'], 'ca' : 'a'}, 
 {'Q' : 'What is it called when an attacker who has compromised a system attempts to gain higher level access to the compromised system?', 'c' : ['A. Leveling Up',
 'B. Pivoting', 'C. Privilidge Escalation'], 'ca' : 'c'}]
 
