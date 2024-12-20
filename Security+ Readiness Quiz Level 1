@@ -1,0 +1,146 @@
+#Security+ Readiness Quiz 1
+
+import random
+import time
+
+#program logic 
+    #greet user and give info about the quiz as well as instructions for input
+    #user is presented with multiple choice sec+ quiz questions 
+    #user inputs answer into program
+    #program evaluate users answer and tells the if it is correct or not
+    #this process continues untill the end where there final score and grade is given
+    #the last section will tell the user what section of the sec+ study guide they need to focus on
+     
+#program outline
+    #ascii art
+    #user instructions
+    #list of dictionaries containing each question, possible answers, and correct answer
+    #while loop to keep the program running and output each new question as user answers
+    #counter used as index to get the right question, answer, and choices
+    #if and elif statements to evaluate the answer and sanitize input
+    #function to evaluate users score
+    #print statement to tell user what section of study guide this quiz was based on
+    
+
+
+
+
+    # artwork, contact, welcome user, explain program
+
+print(r'''\
+                                                                                                                                                 
+         _______________        
+       /               | 
+      /        _____   |
+      |        \    |  |        ______                 __  __                 _____                                                                                   
+      \         \   |__|      /   __  \             /   ___   \              |     |                                                                                          
+        \         \         /    /  \  \          /    /    \__|             |     |                                                       
+          \         \      /    /____\  \       /    /                  _____|     |_____                                     
+ _____      \        /     |    _________\     |    |                  |                 |                                                  
+|     \     /       /      |   |               |    |                  |_____       _____|                                                     
+|      \___/       /       \    \     ___       \    \      ____             |     |                                                  
+|                 /         \    \___/  /         \   \____/  /              |     |                                                                
+ \_______________/           \_________/            \_______/                |_____|                                                                                           
+                                                                                                                                             
+
+                    Am I ready to take the the Comp TIA Sec+ Exam?
+                        Not if you get any of these wrong
+                                 Level 1
+      
+      by: Vergil 
+      YT, FB, IG, TT, SC: crzycybr
+      vergil@crzycybersecurity.com
+      cashapp: $crzymike07
+      ''')
+
+#welcome user and give instructions
+
+print(r'''Welcome to my very basic Comp TIA Security+ Readiness Evaluation. This test 
+      was designed to evaluate if you are ready to take the exam. There are 5 levels ranging
+      from easiest to hardest. The first three levels focus on basics and memorization orientated
+      questions, while the last two focus on concepts and word problems that are more in line 
+      with actual questions from the exam.
+
+      There will be ten multiple choice questions. Unlike the exam you will have three 
+      answers to choose from. Make you selection by entering just the letter of the 
+      selection you believe is correct. At the end of the test you will be given a score,
+      but will also have immediate feedback. 
+
+      This is level 1. If you get ANY of these wrong. You have more
+      studying to do before you even look at their website.
+
+      ''')
+
+input('Press enter to begin')
+#list containing dictionaries for each question that contain the question, choices, and correct answer
+
+questions = [{'Q' : 'What does NGFW stand for?', 'c' : ['A. Next Generation Firewall', 'B. Network Geolation and Free Web', 'C. Not the Gangster to F*** with'], 
+               'ca' : 'a'},
+{'Q' : 'True or false: NAT cannot route from one private IP network to another.' , 'c' : ['A. True' , 'B. False', 'C. Penguins'], 'ca': 'b'},
+{'Q' : 'Which type of attack downgrades HTTPS to HTTP?', 'c' : ['A. SSl Stripping', 'B. Downgrade Attack', 'C. Protol Attack'], 'ca' : 'a'}, 
+{'Q' : 'Which key does a server use to to decrypt a client session key?', 'c' : ['A. Public Key', 'B. Shared Key', 'C. Private Key']
+ , 'ca' : 'c'}, 
+ {'Q' : 'You are analyzing web traffic and notice SIP traffic. What type of activity results in SIP traffic?', 'c' : ['A. VoIP', 'B. Single Internet Protocol', 'C. Signal Iteration Program'], 'ca' : 'a'},
+ {'Q' : 'An adversary captures corporate network traffic by placing himself logically between two hosts that are communicating. What type of attack is this?', 'c' : [ 'A. WITTM Attack', 'B. MITM', 'C. Phishing Attack'],
+  'ca' : 'b'}, 
+  {'Q' : 'What type of risk analysis gives a dollar figure to risks and vulnerabilities', 'c' : ['A. Risk Analysis', 'B. Subjective Analysis',
+'C. Quantitative Analysis'], 'ca' : 'c'},
+ {'Q' : 'What does ALE stand for?', 'c' : ['A. Alltime Loss Estimate', 'B. Annual Loss Expectancy', "C. Aggregate Loss Expectancy"], 'ca' : 'b'},
+{'Q' : 'You are tasked with securing a wireless network. Your only options for encryption are WPA and WEP. Which one is secure?', 'c' : ['A. WPA', 'B. WEP', 'C. Both are insecure'], 'ca' : 'a'}, 
+{'Q' : 'Gary uses shady websites to install free hardware. He comes to you as his computer is slow, but has plenty of diskspace left. Now he\'s getting emails from weird looking domains offering products he has emailed his wife about. What has most likely happened?', 'c' : ['A. Rootkit ',
+'B. Ransomware', 'C. Spyware'], 'ca' : 'c'}]
+
+
+   
+#main program function containing while loop, answer evaluation, counters for indexes and answers
+
+def main():  
+
+    incorrect = 0
+    correct = 0
+    counter = 0
+
+    while counter < len(questions):
+
+       
+            
+        print(questions[counter]['Q'])
+        print('\n' .join(questions[counter]['c']))
+        
+        while True:  # loop until valid input is given
+            user_answer = input('Your selection (a, b, or c): \n').lower()
+            
+            # Validate the input
+            if user_answer not in ['a', 'b', 'c']:
+                print("Invalid choice. Please select 'a', 'b', or 'c'.")
+            else:
+                break
+
+        #check user's answer vs correct answer in dictionary
+        if user_answer != questions[counter]['ca']:
+            print('That is incorrect')
+            incorrect += 1
+            
+            
+
+        else:
+            print('That is correct.')
+            correct += 1 
+            
+        counter += 1    
+
+        
+    score = round(correct/10) * 100  
+
+    if score <= 70: 
+        print(f'You got {correct} out 10. You scored a {score}%. You need to hit those books and learn the basics, \nyou are no where near ready')
+    else:
+        print(f'You got {correct} out of 10. You scored a {score}%. You know a lil bit. Maybe.')
+        
+
+
+    
+
+main()
+
+
